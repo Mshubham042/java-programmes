@@ -21,7 +21,7 @@
                     <td><input type="text" name="name" /></td>
                 </tr>
                 <tr>
-                    <td>Days</td>
+                    <td>Total Days</td>
                      <td>
                          <select name="totaldays">
                              <option value="1">1</option>
