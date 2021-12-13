@@ -16,18 +16,49 @@
         <title>JSP Page</title>
     </head>
     <body class="container">
+         
+        <div class="row">
+            
+            <div class="col-md-3">
+                <h1>Product Name</h1>
+            </div>
+            <div class="col-md-3">
+                <h1>Price</h1>
+            </div>
+            <div class="col-md-3">
+                <h1>Detail</h1>
+            </div>
+                <div class="col-md-3">
+                <h1>Color</h1>
+            </div>
+<!--                 <div class="col-md-2">
+                <h1>Image</h1>
+            </div>
+                 <div class="col-md-2">
+                <h1>Type</h1>
+            </div>-->
+            
+            
            <%
              ArrayList<String> myprod = new ArrayList<String>(); 
-             
+             int a=0;
              myprod = myproduct.getproduct();
              
              for(String p : myprod )
-             {
+               {
+                   a++;
                  %>
-                 <h4> <% out.println(p);%></h4> 
-            <%     
-             }
+                
+                <div class="col-md-3" >
+                  <h3><% out.println(p);%></h3>
+                </div>
+            <% 
+
+                  }
              
-             %>
+              myprod.clear();
+                  %>
+            </div>
+           
     </body>
 </html>

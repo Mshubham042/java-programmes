@@ -30,7 +30,13 @@ public class product {
                while(rs.next())
                {
                    String product = rs.getString("pro_title");
+                   String pro_price = rs.getString("pro_price");
+                   String pro_desc = rs.getString("pro_desc");
+                   String pro_color = rs.getString("pro_color");
                    prod.add(product);
+                   prod.add(pro_price);
+                   prod.add(pro_desc);
+                   prod.add(pro_color);
                }
            } catch (SQLException ex) {
                Logger.getLogger(product.class.getName()).log(Level.SEVERE, null, ex);
