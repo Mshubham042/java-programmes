@@ -4,6 +4,7 @@
     Author     : Test
 --%>
 
+<%@page import="java.util.*"%>
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="header.jsp" %>
@@ -40,23 +41,26 @@
             
             
            <%
-             ArrayList<String> myprod = new ArrayList<String>(); 
-             int a=0;
-             myprod = myproduct.getproduct();
-             
-             for(String p : myprod )
-               {
-                   a++;
-                 %>
-                
-                <div class="col-md-3" >
-                  <h3><% out.println(p);%></h3>
+               
+              List<Map<String,List<List>>> demo = new ArrayList<Map<String,List<List>>>();
+           
+              Map<String, List<List>> requiredata = new HashMap<String, List<List>>();
+              
+              demo = myproduct.getproduct();
+              
+              requiredata =demo.get(0); 
+            %>
+              <div class="col-md-3" >
+                  <h3><%=requiredata.get("product")%></h3>
+              </div>
+                   <div class="col-md-3" >
+                  <h3><%=requiredata.get("Price")%></h3>
                 </div>
             <% 
 
-                  }
+                  
              
-              myprod.clear();
+             
                   %>
             </div>
            
